@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0"/>
+	<meta name="keyword" content="Simple image Editor, Image  Editor, Enhance your images"/>
+	<meta name="description" content="This is a Simple image Editor which help you in getting your images enhanced."/>
+	<link rel="manifest" href="manifest.json">
+	<link rel="icon" href="icon-512.png">
+	<meta name="theme-color" content="#02061C">
+	<link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<script type="text/javascript" src="app.js" defer></script>
+	<title>Simple Image Editor</title>
+
+	 <script>
+        //if browser support service worker
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js');
+        };
+      </script>
+</head>
+<body>
+  
+  <!-- <div class="installBox">
+  	 <button id="installButton" aria-label="install-btn">Install now</button>
+  </div> -->
+
+	<section class="container disable">
+		<h2><p>Simple Image Editor</p></h2>
+       <div class="wrapper">
+       	  <div class="editor_panel">
+       	  	<div class="filterSlider">
+				<div class="filterInfo">
+					<p class="fName">Brightness</p>
+					<p class="fVal">100%</p>
+				</div>
+
+				 <input type="range" id="slider" min="0" max="200" name="slider">
+				 
+			</div>
+
+			<div class="filter">
+				<label class="title">Filters</label>
+				<div class="options">
+					<button id="brightness" class="active" title="Brightness">Brightness</button>
+					<button id="contrast" title="Contrast">Contrast</button>
+					<button id="grayscale" title="SoftGray">SoftGray</button>
+					<button id="saturation" title="Saturation">Saturation</button>
+					<button id="inversion" title="Fading">Fading</button>
+					<button id="hue-rotate" title="HueColor">HueColor</button>
+				</div>
+			</div>
+
+			<div class="rotateFlip">
+				<label class="title">Rotate & Flip</label>
+				<div class="options">
+					<button id="left" title="left"><i class='bx bx-rotate-left'></i></button>
+					<button id="right" title="right"><i class='bx bx-rotate-right'></i></button>
+					<button id="horizontal" title="horizontal"><i class='bx bx-reflect-vertical'></i></i></button>
+					<button id="vertical" title="vertical"><i class='bx bx-reflect-horizontal'></i></button>
+				</div>
+			</div>
+
+			<button class="resetFilter">Reset Filters</button>
+		  </div>
+
+
+		  <div class="preview_panel">
+			<img class="image" src="Choose-file.webp" alt="Uploaded image display here">
+		  </div>
+       </div>
+
+       <div class="controls">
+
+       	  <div class="imgBtns">
+       	  	 <input type="file" id="image upload" name="image" accept="image/*" hidden>
+       	  	  <button class="chooseImg" title="Choose Image">Choose Image</button>
+       	  	  <button class="saveImg" title="Save Image">Save Image</button>
+       	  </div>
+       </div>
+	</section>	
+
+</body>
+</html>
